@@ -1,0 +1,38 @@
+# zk-kafka:
+#   image: spotify/kafka
+#   container_name: zk-kafka
+#   hostname: zk-kafka
+#   environment:
+#     - "ADVERTISED_HOST=192.168.99.100"
+#     - "ADVERTISED_PORT=9092"
+#   ports:
+#     - "9092:9092"
+#     - "2181:2181"
+
+# zookeeper:
+#   image: jplock/zookeeper:latest
+#   container_name: zookeeper
+#   ports:
+#     - "2181:2181"
+
+# kafka:
+#   image: ches/kafka
+#   container_name: kafka
+#   hostname: kafka
+#   links:
+#     - zookeeper
+#   # environment:
+#   #   - "ZK_IP=zookeeper"
+#   ports:
+#     - "9092:9092"
+#     - "7203:7203"
+
+
+elasticsearch:
+  image: elasticsearch
+  container_name: elasticsearch
+  hostname: elasticsearch
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+
