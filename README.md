@@ -4,10 +4,13 @@ The objective is to have single docker image that run zookeeper, kafka, and elas
 ### For the time being, here are the docker command to run the service separately.
 
 Up zookeeper and kafka:
-```docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=`docker-machine ip \`docker-machine active\`` --env ADVERTISED_PORT=9092 spotify/kafka```
+```
+docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=`docker-machine ip \`docker-machine active\`` --env ADVERTISED_PORT=9092 spotify/kafka
+```
 
 Up elasticsearch:
-``` docker run -p 9200:9200 -p 9300:9300 docker.elastic.co/elasticsearch/elasticsearch:5.3.3
+```
+docker run -p 9200:9200 -p 9300:9300 docker.elastic.co/elasticsearch/elasticsearch:5.3.3
 ```
 
 Reference:
